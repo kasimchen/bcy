@@ -31,7 +31,7 @@ def GetNowTime():
 
 def sqlExecute(sql,arge=None):
     try:
-        conn = MySQLdb.connect(host='', user='', passwd='', port=3306, charset='utf8')
+        conn = MySQLdb.connect(host='123.57.153.40', user='root', passwd='15811225474', port=3306, charset='utf8')
         cur = conn.cursor()
         conn.select_db('bcy')
         cur.execute(sql,arge)
@@ -46,7 +46,7 @@ def sqlExecute(sql,arge=None):
 
 def sqlQuery(sql,arge=None):
     try:
-        conn = MySQLdb.connect(host='', user='', passwd='', port=3306, charset='utf8')
+        conn = MySQLdb.connect(host='123.57.153.40', user='root', passwd='15811225474', port=3306, charset='utf8')
         cur = conn.cursor()
         conn.select_db('bcy')
         return cur.execute(sql,arge)
@@ -107,6 +107,8 @@ def run(page,sec):
     for i in range(page[0],page[1],1):
         print '当前线程'+page[2]+'为开始页为'+str(page[0])+'当前页为'+str(i)+'结束页为'+str(page[1])
         get_list('http://bcy.net/coser/allwork?&p='+str(i))
+        if i==page[1]:
+            print '此线程采集完毕'
 
 if __name__ == '__main__':
     pages = [[1, 500,'线程1'],
