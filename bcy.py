@@ -124,6 +124,6 @@ if __name__ == '__main__':
         threadpool.append(th)
 
     for th in threadpool:
-        th.setDaemon(True)
+        #th.setDaemon(True)
         th.start()
     th.join()
