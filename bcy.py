@@ -31,7 +31,7 @@ def GetNowTime():
 
 def sqlExecute(sql,arge=None):
     try:
-        conn = MySQLdb.connect(host='123.57.153.40', user='root', passwd='15811225474', port=3306, charset='utf8')
+        conn = MySQLdb.connect(host='', user='', passwd='', port=3306, charset='utf8')
         cur = conn.cursor()
         conn.select_db('bcy')
         cur.execute(sql,arge)
@@ -46,7 +46,7 @@ def sqlExecute(sql,arge=None):
 
 def sqlQuery(sql,arge=None):
     try:
-        conn = MySQLdb.connect(host='123.57.153.40', user='root', passwd='15811225474', port=3306, charset='utf8')
+        conn = MySQLdb.connect(host='', user='', passwd='', port=3306, charset='utf8')
         cur = conn.cursor()
         conn.select_db('bcy')
         return cur.execute(sql,arge)
